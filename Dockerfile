@@ -1,8 +1,8 @@
-# syntax = docker/dockerfile:latest
+
 
 ARG ALPINE_VERSION=3.18
-
-FROM alpine:${ALPINE_VERSION}
+ARG REGISTRY
+FROM ${REGISTRY}docker.io/library/alpine:${ALPINE_VERSION}
 
 RUN apk add --no-cache curl jq
 
